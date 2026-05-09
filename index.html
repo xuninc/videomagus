@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>AI Video Magus Models</title>
+  <title>AIVideoMagus Models</title>
 
   <style>
     * {
@@ -95,18 +95,18 @@
       border-radius: 10px;
       font-weight: 600;
       transition: 0.2s ease;
-	}
-
-	a.button.small {
-	  padding: 6px 10px;
-	  font-size: 12px;
-	  border-radius: 8px;
-	  margin-right: 6px;
-	  margin-top: 6px;
-	}
+      margin-top: 6px;
+      margin-right: 6px;
+    }
 
     a.button:hover {
       background: #3a73dd;
+    }
+
+    a.button.small {
+      padding: 6px 10px;
+      font-size: 12px;
+      border-radius: 8px;
     }
 
     footer {
@@ -125,18 +125,18 @@
 </head>
 <body>
 
-  <h1>AI Video Magus Models</h1>
+  <h1>AIVideoMagus Models</h1>
 
   <p>
-    ONNX models used by AI Video Magus for video enhancement, face detection,
-    OCR, segmentation, cleanup, restoration, and AI-assisted workflows.
+    ONNX models used by AIVideoMagus for OCR, AI upscaling,
+    face detection, segmentation, restoration, and enhancement workflows.
     <br><br>
-    Most models work best with:
+    Optimized for:
     <code>CoreML / Apple Neural Engine</code>,
-    <code>DirectML</code>,
+    <code>ONNX Runtime</code>,
     <code>TensorRT</code>,
-    or
-    <code>ONNX Runtime</code>.
+    and
+    <code>DirectML</code>.
   </p>
 
   <div class="grid">
@@ -147,21 +147,19 @@
       <div class="title">PP-OCRv5 Mobile Detection</div>
 
       <div class="desc">
-        Lightweight OCR text detection model optimized for mobile devices.
-        Detects text regions inside images or video frames.
+        Lightweight OCR text detector optimized for mobile devices.
       </div>
 
       <div class="meta">
-        File: <code>PP-OCRv5_mobile_det_infer.onnx</code><br>
-        Type: OCR Text Detection
+        File: <code>PP-OCRv5_mobile_det_infer.onnx</code>
       </div>
 
       <div class="tips">
         <strong>Best For:</strong><br>
-        Watermarks, subtitles, UI text, screenshots, signs, manga bubbles.
+        Watermarks, subtitles, UI text, screenshots, signs.
       </div>
 
-      <a class="button" href="./models/PP-OCRv5_mobile_det_infer.onnx">
+      <a class="button" href="https://github.com/xuninc/videomagus/releases/download/models-v1/PP-OCRv5_mobile_det_infer.onnx">
         Download
       </a>
     </div>
@@ -171,20 +169,18 @@
 
       <div class="desc">
         OCR recognition model used after text detection.
-        Converts cropped text regions into readable text.
       </div>
 
       <div class="meta">
-        File: <code>PP-OCRv5_mobile_rec_infer.onnx</code><br>
-        Type: OCR Recognition
+        File: <code>PP-OCRv5_mobile_rec_infer.onnx</code>
       </div>
 
       <div class="tips">
         <strong>Tip:</strong><br>
-        Use together with the Detection model for full OCR workflows.
+        Pair with the detection model for full OCR workflows.
       </div>
 
-      <a class="button" href="./models/PP-OCRv5_mobile_rec_infer.onnx">
+      <a class="button" href="https://github.com/xuninc/videomagus/releases/download/models-v1/PP-OCRv5_mobile_rec_infer.onnx">
         Download
       </a>
     </div>
@@ -195,20 +191,14 @@
       <div class="title">RealESRGAN x2</div>
 
       <div class="desc">
-        Moderate 2x AI upscaler for restoring detail while maintaining speed.
+        Moderate 2x AI upscaler balancing speed and detail recovery.
       </div>
 
       <div class="meta">
-        File: <code>RealESRGAN_x2.onnx</code><br>
-        Type: AI Upscaling
+        File: <code>RealESRGAN_x2.onnx</code>
       </div>
 
-      <div class="tips">
-        <strong>Best For:</strong><br>
-        Anime, screenshots, compressed video, YouTube footage.
-      </div>
-
-      <a class="button" href="./models/RealESRGAN_x2.onnx">
+      <a class="button" href="https://github.com/xuninc/videomagus/releases/download/models-v1/RealESRGAN_x2.onnx">
         Download
       </a>
     </div>
@@ -217,20 +207,14 @@
       <div class="title">RealESRGAN x2 FP16</div>
 
       <div class="desc">
-        FP16 optimized variant of the x2 upscaler for faster inference.
+        FP16 optimized x2 upscaler for faster inference.
       </div>
 
       <div class="meta">
-        File: <code>RealESRGAN_x2_fp16.onnx</code><br>
-        Type: Optimized Upscaler
+        File: <code>RealESRGAN_x2_fp16.onnx</code>
       </div>
 
-      <div class="tips">
-        <strong>Best For:</strong><br>
-        Apple Neural Engine, DirectML, TensorRT.
-      </div>
-
-      <a class="button" href="./models/RealESRGAN_x2_fp16.onnx">
+      <a class="button" href="https://github.com/xuninc/videomagus/releases/download/models-v1/RealESRGAN_x2_fp16.onnx">
         Download
       </a>
     </div>
@@ -239,20 +223,14 @@
       <div class="title">RealESRGAN x2plus FP16</div>
 
       <div class="desc">
-        Higher-quality 2x enhancement model with stronger texture recovery.
+        Higher-quality 2x restoration with improved texture synthesis.
       </div>
 
       <div class="meta">
-        File: <code>RealESRGAN_x2plus.fp16.onnx</code><br>
-        Type: High Detail Upscaler
+        File: <code>RealESRGAN_x2plus.fp16.onnx</code>
       </div>
 
-      <div class="tips">
-        <strong>Best For:</strong><br>
-        Faces, photography, compressed detail restoration.
-      </div>
-
-      <a class="button" href="./models/RealESRGAN_x2plus.fp16.onnx">
+      <a class="button" href="https://github.com/xuninc/videomagus/releases/download/models-v1/RealESRGAN_x2plus.fp16.onnx">
         Download
       </a>
     </div>
@@ -261,20 +239,14 @@
       <div class="title">RealESRGAN x4</div>
 
       <div class="desc">
-        Standard 4x AI upscaler for aggressive enhancement and restoration.
+        Standard 4x AI enhancement model.
       </div>
 
       <div class="meta">
-        File: <code>RealESRGAN_x4.onnx</code><br>
-        Type: 4x Upscaling
+        File: <code>RealESRGAN_x4.onnx</code>
       </div>
 
-      <div class="tips">
-        <strong>Warning:</strong><br>
-        May hallucinate detail on extremely blurry sources.
-      </div>
-
-      <a class="button" href="./models/RealESRGAN_x4.onnx">
+      <a class="button" href="https://github.com/xuninc/videomagus/releases/download/models-v1/RealESRGAN_x4.onnx">
         Download
       </a>
     </div>
@@ -283,20 +255,14 @@
       <div class="title">RealESRGAN x4 FP16</div>
 
       <div class="desc">
-        Faster FP16 version of the standard x4 upscaler.
+        FP16 optimized 4x upscaler for faster hardware acceleration.
       </div>
 
       <div class="meta">
-        File: <code>RealESRGAN_x4_fp16.onnx</code><br>
-        Type: Optimized 4x Upscaler
+        File: <code>RealESRGAN_x4_fp16.onnx</code>
       </div>
 
-      <div class="tips">
-        <strong>Best For:</strong><br>
-        Real-time or mobile enhancement workflows.
-      </div>
-
-      <a class="button" href="./models/RealESRGAN_x4_fp16.onnx">
+      <a class="button" href="https://github.com/xuninc/videomagus/releases/download/models-v1/RealESRGAN_x4_fp16.onnx">
         Download
       </a>
     </div>
@@ -305,20 +271,14 @@
       <div class="title">RealESRGAN x4plus FP16</div>
 
       <div class="desc">
-        Premium-quality 4x restoration model with improved texture synthesis.
+        Premium 4x restoration model with stronger detail synthesis.
       </div>
 
       <div class="meta">
-        File: <code>RealESRGAN_x4plus.fp16.onnx</code><br>
-        Type: Premium Upscaler
+        File: <code>RealESRGAN_x4plus.fp16.onnx</code>
       </div>
 
-      <div class="tips">
-        <strong>Best For:</strong><br>
-        Final renders and high-quality restoration.
-      </div>
-
-      <a class="button" href="./models/RealESRGAN_x4plus.fp16.onnx">
+      <a class="button" href="https://github.com/xuninc/videomagus/releases/download/models-v1/RealESRGAN_x4plus.fp16.onnx">
         Download
       </a>
     </div>
@@ -327,20 +287,14 @@
       <div class="title">RealESRGAN x8</div>
 
       <div class="desc">
-        Extreme 8x AI upscaler for highly enlarged outputs.
+        Extreme 8x enhancement model for aggressive enlargement.
       </div>
 
       <div class="meta">
-        File: <code>RealESRGAN_x8.onnx</code><br>
-        Type: Extreme Upscaling
+        File: <code>RealESRGAN_x8.onnx</code>
       </div>
 
-      <div class="tips">
-        <strong>Warning:</strong><br>
-        Very compute-heavy. Can produce artificial-looking detail.
-      </div>
-
-      <a class="button" href="./models/RealESRGAN_x8.onnx">
+      <a class="button" href="https://github.com/xuninc/videomagus/releases/download/models-v1/RealESRGAN_x8.onnx">
         Download
       </a>
     </div>
@@ -353,16 +307,10 @@
       </div>
 
       <div class="meta">
-        File: <code>RealESRGAN_x8_fp16.onnx</code><br>
-        Type: Optimized Extreme Upscaling
+        File: <code>RealESRGAN_x8_fp16.onnx</code>
       </div>
 
-      <div class="tips">
-        <strong>Best For:</strong><br>
-        Experimental ultra-high-scale enhancement workflows.
-      </div>
-
-      <a class="button" href="./models/RealESRGAN_x8_fp16.onnx">
+      <a class="button" href="https://github.com/xuninc/videomagus/releases/download/models-v1/RealESRGAN_x8_fp16.onnx">
         Download
       </a>
     </div>
@@ -375,81 +323,75 @@
       </div>
 
       <div class="meta">
-        File: <code>Real-ESRGAN-x4plus.onnx</code><br>
-        Type: General Restoration
+        File: <code>Real-ESRGAN-x4plus.onnx</code>
       </div>
 
-      <div class="tips">
-        <strong>Best For:</strong><br>
-        General-purpose enhancement and cleanup.
-      </div>
-
-      <a class="button" href="./models/Real-ESRGAN-x4plus.onnx">
+      <a class="button" href="https://github.com/xuninc/videomagus/releases/download/models-v1/Real-ESRGAN-x4plus.onnx">
         Download
       </a>
     </div>
 
-    <!-- FACE -->
+    <!-- YOLO -->
 
     <div class="card">
       <div class="title">YOLOv8 Face</div>
 
       <div class="desc">
-        Fast ONNX face detector for tracking, masking, enhancement,
-        restoration, and preprocessing pipelines.
+        Fast face detection model for masking, tracking, enhancement,
+        and preprocessing pipelines.
       </div>
 
       <div class="meta">
-        File: <code>yolov8m-face.onnx</code><br>
-        Type: Face Detection
+        File: <code>yolov8m-face.onnx</code>
       </div>
 
       <div class="tips">
         <strong>Best For:</strong><br>
-        Face restoration, face masking, blur targeting,
-        and live detection pipelines.
+        Real-time face detection and blur targeting.
       </div>
 
-      <a class="button" href="./models/yolov8m-face.onnx">
+      <a class="button" href="https://github.com/xuninc/videomagus/releases/download/models-v1/yolov8m-face.onnx">
         Download
       </a>
     </div>
 
-<div class="card">
-  <div class="title">YOLOv11 Face Models</div>
+    <div class="card">
+      <div class="title">YOLOv11 Face Models</div>
 
-  <div class="desc">
-    Newer-generation face detection models with improved precision,
-    stability, and tracking consistency.
-  </div>
+      <div class="desc">
+        Newer-generation face detectors with improved robustness,
+        tracking consistency, and accuracy.
+      </div>
 
-  <div class="meta">
-    Files:
-    <br><code>yolov11l-face.onnx</code>
-    <br><code>yolov11m-face.onnx</code>
-    <br><code>yolov11n-face.onnx</code>
-    <br><code>yolov11s-face.onnx</code>
-	
-  </div>
-	
-	  <div class="tips">
-    <strong>Variants:</strong><br>
-    n = Nano / fastest<br>
-    s = Small / fast<br>
-    m = Medium / balanced<br>
-    l = Large / highest accuracy
-  </div>
+      <div class="meta">
+        Files:
+        <br><code>yolov11n-face.onnx</code>
+        <br><code>yolov11s-face.onnx</code>
+        <br><code>yolov11m-face.onnx</code>
+        <br><code>yolov11l-face.onnx</code>
+      </div>
 
-	<a class="button small" href="./models/yolov11n-face.onnx">Nano</a>
-	<a class="button small" href="./models/yolov11s-face.onnx">Small</a>
-	<a class="button small" href="./models/yolov11m-face.onnx">Medium</a>
-	<a class="button small" href="./models/yolov11l-face.onnx">Large</a>
-</div>
-	
+      <div class="tips">
+        <strong>Variants:</strong><br>
+        n = Nano / fastest<br>
+        s = Small<br>
+        m = Medium<br>
+        l = Large / highest accuracy
+      </div>
+
+      <a class="button small" href="https://github.com/xuninc/videomagus/releases/download/models-v1/yolov11n-face.onnx">Nano</a>
+
+      <a class="button small" href="https://github.com/xuninc/videomagus/releases/download/models-v1/yolov11s-face.onnx">Small</a>
+
+      <a class="button small" href="https://github.com/xuninc/videomagus/releases/download/models-v1/yolov11m-face.onnx">Medium</a>
+
+      <a class="button small" href="https://github.com/xuninc/videomagus/releases/download/models-v1/yolov11l-face.onnx">Large</a>
+    </div>
+
   </div>
 
   <footer>
-    Hosted on GitHub Pages • AI Video Magus
+    Hosted via GitHub Releases • AIVideoMagus
   </footer>
 
 </body>
