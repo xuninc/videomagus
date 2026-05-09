@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 3,
+  "models": [
+    {
+      "modelID": "lama_inpaint",
+      "downloadURL": "https://huggingface.co/Carve/LaMa-ONNX/resolve/main/lama_fp32.onnx",
+      "mirrors": [
+        "https://hf-mirror.com/Carve/LaMa-ONNX/resolve/main/lama_fp32.onnx"
+      ],
+      "sizeBytes": 208044816,
+      "tip": "LaMa-style inpainting ONNX. Inputs: image (1×3×H×W float32, 0-1) + mask (1×1×H×W float32, 0=keep 1=fill). One image output."
+    },
+    {
+      "modelID": "rvm_matting",
+      "downloadURL": "https://github.com/PeterL1n/RobustVideoMatting/releases/download/v1.0.0/rvm_mobilenetv3_fp32.onnx",
+      "mirrors": [
+        "https://huggingface.co/PeterL1n/RobustVideoMatting/resolve/main/rvm_mobilenetv3_fp32.onnx"
+      ],
+      "sizeBytes": 14975696,
+      "tip": "RVM Matting. Recurrent model: requires inputs src + r1i…r4i and outputs fgr, pha, r1o…r4o. Use the official PeterL1n export."
+    },
+    {
+      "modelID": "realesrgan_x2",
+      "downloadURL": "https://huggingface.co/JoPmt/Real_Esrgan_x2_Onnx_Tflite_Tfjs/resolve/main/model.onnx",
+      "mirrors": [
+        "https://hf-mirror.com/JoPmt/Real_Esrgan_x2_Onnx_Tflite_Tfjs/resolve/main/model.onnx"
+      ],
+      "sizeBytes": 67116767,
+      "tip": "Real-ESRGAN 2× upscaler. One image input, one image output, scale ×2."
+    },
+    {
+      "modelID": "realesrgan_x4",
+      "downloadURL": "https://huggingface.co/Meeperomi/RealESRGAN_x4-onnx/resolve/main/RealESRGAN_x4.onnx",
+      "mirrors": [
+        "https://hf-mirror.com/Meeperomi/RealESRGAN_x4-onnx/resolve/main/RealESRGAN_x4.onnx"
+      ],
+      "sizeBytes": 69464831,
+      "tip": "Real-ESRGAN 4× upscaler. One image input, one image output, scale ×4."
+    },
+    {
+      "modelID": "text_detector",
+      "downloadURL": "https://huggingface.co/breezedeus/cnstd-ppocr-ch_PP-OCRv5_det/resolve/main/ch_PP-OCRv5_det_infer.onnx",
+      "mirrors": [
+        "https://hf-mirror.com/breezedeus/cnstd-ppocr-ch_PP-OCRv5_det/resolve/main/ch_PP-OCRv5_det_infer.onnx"
+      ],
+      "sizeBytes": 4819576,
+      "tip": "PP-OCRv5 Mobile text detector. Input: 1×3×H×W float32 ImageNet-normalised, H and W multiples of 32. Output: [1,1,H,W] sigmoid probability map (`sigmoid_0.tmp_0`).",
+      "variants": [
+        {
+          "id": "ppocr_v5_mobile",
+          "label": "PP-OCRv5 Mobile",
+          "description": "Recommended. 4.8 MB, fast, best accuracy/size tradeoff.",
+          "downloadURL": "https://huggingface.co/breezedeus/cnstd-ppocr-ch_PP-OCRv5_det/resolve/main/ch_PP-OCRv5_det_infer.onnx",
+          "mirrors": [
+            "https://hf-mirror.com/breezedeus/cnstd-ppocr-ch_PP-OCRv5_det/resolve/main/ch_PP-OCRv5_det_infer.onnx"
+          ],
+          "sizeBytes": 4819576,
+          "sha256": "4d97c44a20d30a81aad087d6a396b08f786c4635742afc391f6621f5c6ae78ae"
+        },
+        {
+          "id": "ppocr_v5_server",
+          "label": "PP-OCRv5 Server",
+          "description": "Highest quality. 84 MB, ~3× slower than mobile.",
+          "downloadURL": "https://huggingface.co/breezedeus/cnstd-ppocr-ch_PP-OCRv5_det_server/resolve/main/ch_PP-OCRv5_det_server_infer.onnx",
+          "mirrors": [
+            "https://hf-mirror.com/breezedeus/cnstd-ppocr-ch_PP-OCRv5_det_server/resolve/main/ch_PP-OCRv5_det_server_infer.onnx"
+          ],
+          "sizeBytes": 88118768,
+          "sha256": "0f8846b1d4bba223a2a2f9d9b44022fbc22cc019051a602b41a7fda9667e4cad"
+        },
+        {
+          "id": "ppocr_v4_mobile",
+          "label": "PP-OCRv4 Mobile",
+          "description": "Previous generation. 4.7 MB, proven on legacy footage.",
+          "downloadURL": "https://huggingface.co/webnn/PP-OCRv4-ONNX/resolve/main/ch_PP-OCRv4_det.onnx",
+          "mirrors": [
+            "https://hf-mirror.com/webnn/PP-OCRv4-ONNX/resolve/main/ch_PP-OCRv4_det.onnx"
+          ],
+          "sizeBytes": 4745517,
+          "sha256": "30a86f5731181461d08021402766601e4302a9b9b9666be8aff402696339cdff"
+        }
+      ]
+    },
+    {
+      "modelID": "yolov8n_face",
+      "downloadURL": "https://github.com/lindevs/yolov8-face/releases/download/1.0.1/yolov8n-face-lindevs.onnx",
+      "mirrors": [
+        "https://huggingface.co/spaces/lindevs/yolov8-face/resolve/main/yolov8n-face-lindevs.onnx"
+      ],
+      "sizeBytes": 12250955,
+      "tip": "YOLOv8n face detector. Input: 1×3×640×640. Output: [1,5,8400] (cx,cy,w,h,conf)."
+    }
+  ]
+}
