@@ -8,7 +8,16 @@
         "https://hf-mirror.com/Carve/LaMa-ONNX/resolve/main/lama_fp32.onnx"
       ],
       "sizeBytes": 208044816,
+      "sha256": "1faef5301d78db7dda502fe59966957ec4b79dd64e16f03ed96913c7a4eb68d6",
       "tip": "LaMa-style inpainting ONNX. Inputs: image (1×3×H×W float32, 0-1) + mask (1×1×H×W float32, 0=keep 1=fill). One image output."
+    },
+    {
+      "modelID": "lama_inpaint_strip_64x512",
+      "downloadURL": "https://github.com/xuninc/videomagus/releases/download/models-v2/lama_fp32_64x512_standalone.onnx",
+      "mirrors": [],
+      "sizeBytes": 215632858,
+      "sha256": "2f47b384f6323be82ed34c3e57429be02e70d57f88e7e6109c6ab4fc2db50091",
+      "tip": "Custom Big-LaMa 512×64 strip export for long, narrow text watermarks. Inputs: image (1×3×64×512 float32, 0-1) + mask (1×1×64×512 float32, 0=keep 1=fill)."
     },
     {
       "modelID": "rvm_matting",
@@ -17,25 +26,28 @@
         "https://huggingface.co/PeterL1n/RobustVideoMatting/resolve/main/rvm_mobilenetv3_fp32.onnx"
       ],
       "sizeBytes": 14975696,
+      "sha256": "88d4531297118f595bf2fd60f6f566aec2e559393802d1f436c380f0cbbd2828",
       "tip": "RVM Matting. Recurrent model: requires inputs src + r1i…r4i and outputs fgr, pha, r1o…r4o. Use the official PeterL1n export."
     },
     {
       "modelID": "realesrgan_x2",
-      "downloadURL": "https://huggingface.co/JoPmt/Real_Esrgan_x2_Onnx_Tflite_Tfjs/resolve/main/model.onnx",
+      "downloadURL": "https://huggingface.co/tamnvcc/RealESRGAN-onnx/resolve/main/onnx/RealESRGAN_x2plus.fp16.onnx",
       "mirrors": [
-        "https://hf-mirror.com/JoPmt/Real_Esrgan_x2_Onnx_Tflite_Tfjs/resolve/main/model.onnx"
+        "https://hf-mirror.com/tamnvcc/RealESRGAN-onnx/resolve/main/onnx/RealESRGAN_x2plus.fp16.onnx"
       ],
-      "sizeBytes": 67116767,
-      "tip": "Real-ESRGAN 2× upscaler. One image input, one image output, scale ×2."
+      "sizeBytes": 33619494,
+      "sha256": "0b1770bcb31b3a9021d4251b538da4eb47c84f42706504d44a76d17e8c267606",
+      "tip": "Real-ESRGAN x2plus (xinntao official weights, fp16 ONNX export). One image input, one image output, scale ×2."
     },
     {
       "modelID": "realesrgan_x4",
-      "downloadURL": "https://huggingface.co/Meeperomi/RealESRGAN_x4-onnx/resolve/main/RealESRGAN_x4.onnx",
+      "downloadURL": "https://huggingface.co/tamnvcc/RealESRGAN-onnx/resolve/main/onnx/RealESRGAN_x4plus.fp16.onnx",
       "mirrors": [
-        "https://hf-mirror.com/Meeperomi/RealESRGAN_x4-onnx/resolve/main/RealESRGAN_x4.onnx"
+        "https://hf-mirror.com/tamnvcc/RealESRGAN-onnx/resolve/main/onnx/RealESRGAN_x4plus.fp16.onnx"
       ],
-      "sizeBytes": 69464831,
-      "tip": "Real-ESRGAN 4× upscaler. One image input, one image output, scale ×4."
+      "sizeBytes": 33606180,
+      "sha256": "0a06c68f463a14bf5563b78d77d61ba4394024e148383c4308d6d3783eac2dc5",
+      "tip": "Real-ESRGAN x4plus (xinntao official weights, fp16 ONNX export). One image input, one image output, scale ×4."
     },
     {
       "modelID": "text_detector",
@@ -44,6 +56,7 @@
         "https://hf-mirror.com/breezedeus/cnstd-ppocr-ch_PP-OCRv5_det/resolve/main/ch_PP-OCRv5_det_infer.onnx"
       ],
       "sizeBytes": 4819576,
+      "sha256": "4d97c44a20d30a81aad087d6a396b08f786c4635742afc391f6621f5c6ae78ae",
       "tip": "PP-OCRv5 Mobile text detector. Input: 1×3×H×W float32 ImageNet-normalised, H and W multiples of 32. Output: [1,1,H,W] sigmoid probability map (`sigmoid_0.tmp_0`).",
       "variants": [
         {
@@ -82,13 +95,50 @@
       ]
     },
     {
-      "modelID": "yolov8n_face",
-      "downloadURL": "https://github.com/lindevs/yolov8-face/releases/download/1.0.1/yolov8n-face-lindevs.onnx",
-      "mirrors": [
-        "https://huggingface.co/spaces/lindevs/yolov8-face/resolve/main/yolov8n-face-lindevs.onnx"
-      ],
-      "sizeBytes": 12250955,
-      "tip": "YOLOv8n face detector. Input: 1×3×640×640. Output: [1,5,8400] (cx,cy,w,h,conf)."
+      "modelID": "yolo_face",
+      "downloadURL": "https://github.com/xuninc/videomagus/releases/download/models-v1/yolov11n-face.onnx",
+      "mirrors": [],
+      "sizeBytes": 10481560,
+      "sha256": "7b4b3a098ac15a5ccd0d048e7949b63275e4a9657c374ad9e4730632d9f01829",
+      "tip": "YOLOv11-face detector. Input 1×3×640×640, output [1,5,N].",
+      "variants": [
+        {
+          "id": "yolov11n",
+          "label": "YOLOv11n Face",
+          "description": "Recommended. 10 MB, fastest.",
+          "downloadURL": "https://github.com/xuninc/videomagus/releases/download/models-v1/yolov11n-face.onnx",
+          "mirrors": [],
+          "sizeBytes": 10481560,
+          "sha256": "7b4b3a098ac15a5ccd0d048e7949b63275e4a9657c374ad9e4730632d9f01829"
+        },
+        {
+          "id": "yolov11s",
+          "label": "YOLOv11s Face",
+          "description": "Better recall. 38 MB, ~2× slower.",
+          "downloadURL": "https://github.com/xuninc/videomagus/releases/download/models-v1/yolov11s-face.onnx",
+          "mirrors": [],
+          "sizeBytes": 37805188,
+          "sha256": "de2d0582451a323af9a0fb05da70f32b4f26fcf411657c2dd491037ecd18efe6"
+        },
+        {
+          "id": "yolov11m",
+          "label": "YOLOv11m Face",
+          "description": "High accuracy. 80 MB, ~4× slower.",
+          "downloadURL": "https://github.com/xuninc/videomagus/releases/download/models-v1/yolov11m-face.onnx",
+          "mirrors": [],
+          "sizeBytes": 80307967,
+          "sha256": "0136c7938193241ebde248abc0678455c01120976dacea425af53d72fc4a70a3"
+        },
+        {
+          "id": "yolov11l",
+          "label": "YOLOv11l Face",
+          "description": "Best accuracy. 102 MB, ~6× slower.",
+          "downloadURL": "https://github.com/xuninc/videomagus/releases/download/models-v1/yolov11l-face.onnx",
+          "mirrors": [],
+          "sizeBytes": 101390341,
+          "sha256": "da724912dbf0c1d2f045c4af74f30ca7ba8457f27be770459ba02363e43eeaaf"
+        }
+      ]
     }
   ]
 }
