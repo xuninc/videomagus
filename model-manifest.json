@@ -20,6 +20,16 @@
       "tip": "Custom Big-LaMa 512×64 strip export for long, narrow text watermarks. Inputs: image (1×3×64×512 float32, 0-1) + mask (1×1×64×512 float32, 0=keep 1=fill)."
     },
     {
+      "modelID": "birefnet_lite_matting",
+      "downloadURL": "https://huggingface.co/studioludens/birefnet-lite-512/resolve/main/onnx/model_fp16.onnx",
+      "mirrors": [
+        "https://hf-mirror.com/studioludens/birefnet-lite-512/resolve/main/onnx/model_fp16.onnx"
+      ],
+      "sizeBytes": 98484532,
+      "sha256": "eff9216bb2f9d3f023d9c2b7196845a7485739ab1f231593633e4d2344ffc516",
+      "tip": "BiRefNet-lite 512 fp16 ONNX general matte. Input: input_image (1×3×512×512 float32, ImageNet-normalized, letterboxed). Output: output_image (1×1×512×512 float32 logits; apply sigmoid)."
+    },
+    {
       "modelID": "rvm_matting",
       "downloadURL": "https://github.com/PeterL1n/RobustVideoMatting/releases/download/v1.0.0/rvm_mobilenetv3_fp32.onnx",
       "mirrors": [
